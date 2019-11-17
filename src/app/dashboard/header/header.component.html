@@ -1,0 +1,7 @@
+<div class="alert"
+     [ngClass]="{ 'alert-success': showSuccess, 'alert-danger': !showSuccess }"
+     role="alert"
+     *ngIf="bannerMessage">
+  {{bannerMessage}}
+</div>
+

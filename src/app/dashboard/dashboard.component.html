@@ -1,0 +1,27 @@
+<div class="container">
+  <app-header [bannerMessage] = "bannerMessage" [showSuccess]="showSuccessBanner"></app-header>
+
+  <form novalidate [formGroup]="formImport" (ngSubmit)="onSubmit()">
+    <div class="input-group mb-3">
+      <div class="custom-file overflow-hidden rounded-pill">
+        <input id="importFile" name="importFile"  formControlName="importFile" type="file" class="custom-file-input rounded-pill"
+               (change)="onFileChange($event.target.files)">
+        <label #labelImport for="importFile" class="custom-file-label rounded-pill"><i class="fas fa-search"></i> Choose file</label>
+      </div>
+    </div>
+    <div class="input-group justify-content-center">
+      <button type="submit" [disabled]="formImport.invalid" class="btn btn-primary rounded-pill">Upload</button>
+    </div>
+  </form>
+  <div *ngIf="response && response['status'] === 400">
+      <app-records [records]="response.duplicateRecords" [header] = "duplicateHeader" *ngIf="duplicateRecords.length > 0"></app-records>
+      <app-records [records]="response.invalidEndBalanceRecords"  [header] = "invalidHeader" *ngIf="erroneousRecords.length > 0"></app-records>
+  </div>
+</div>
+
+
+
+
+
+
+

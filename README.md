@@ -1,6 +1,13 @@
 # RaboBankAssignmentFE
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
+This is the Front end part of application. User can upload csv or xml file of financial statement.
+Backend API validates the uploaded file and returns the result.
+
+## Setup
+To set up front end application, 1st build the project with `npm install`
+Once the build is completed, run `npm run start` to run the application
+Default port is 4200 and can check the application at http://localhost:4200/ url
 
 ## Development server
 
@@ -21,7 +28,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
